@@ -1,0 +1,22 @@
+{
+  "name": "standen_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gersonnoboa/Standen_BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gersonnoboa/Standen_BackEnd/issues"
+  },
+  "homepage": "https://github.com/gersonnoboa/Standen_BackEnd#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
