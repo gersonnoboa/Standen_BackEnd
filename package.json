@@ -17,6 +17,14 @@
   },
   "homepage": "https://github.com/gersonnoboa/Standen_BackEnd#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "config": "^2.0.1",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "joi": "^13.6.0",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
