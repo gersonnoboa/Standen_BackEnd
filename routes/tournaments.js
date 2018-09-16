@@ -1,14 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const mongoose = require("mongoose");
-const tournamentSchema = mongoose.Schema({
-    name: String
-});
-const Tournament = mongoose.model("Tournament", tournamentSchema);
-
-const teams = require("./teams")
-router.use("/:id/teams", teams);
+const Tournament = require("../data/schemas/tournament");
 
 router.get("/", async (req, res) => {
     const tournaments = await Tournament.find();

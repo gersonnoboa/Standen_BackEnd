@@ -9,14 +9,18 @@ const users = require("./routes/users");
 const tournaments = require("./routes/tournaments");
 const matches = require("./routes/matches");
 const teams = require("./routes/teams");
+const matchResults = require("./routes/match-results");
+const standings = require("./routes/standings");
+app.use(express.json());
+app.use(helmet());
+
 
 app.use("/api/users", users);
 app.use("/api/tournaments", tournaments);
 app.use("/api/tournaments/:id/teams", teams);
 app.use("/api/tournaments/:id/matches", matches);
-
-app.use(express.json());
-app.use(helmet());
+app.use("/api/tournaments/:id/standings", standings);
+app.use("/api/tournaments/:id/matches/:mid/result", matchResults);
 
 if (app.get("env") === "development") {
   app.use(morgan("tiny"));
