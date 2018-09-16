@@ -7,18 +7,23 @@ const mongoose = require("mongoose");
 
 const users = require("./routes/users");
 const tournaments = require("./routes/tournaments");
+const matches = require("./routes/matches");
+const teams = require("./routes/teams");
+
+app.use("/api/users", users);
+app.use("/api/tournaments", tournaments);
+app.use("/api/tournaments/:id/teams", teams);
+app.use("/api/tournaments/:id/matches", matches);
 
 app.use(express.json());
 app.use(helmet());
-app.use("/api/users", users);
-app.use("/api/tournaments", tournaments);
 
 if (app.get("env") === "development") {
   app.use(morgan("tiny"));
 }
 
 mongoose.connect("mongodb://localhost/standen")
-    .then(() => console.log("connected"))
+    .then(() => console.log("Connected to MongoDB..."))
     .catch(err => console.error(err))
 
 app.get("/", (req, res) => {
