@@ -4,8 +4,11 @@ const app = express();
 const helmet = require("helmet");
 const morgan = require("morgan");
 
+const users = require("./routes/users");
 app.use(express.json());
 app.use(helmet());
+app.use("/api/users", users);
+app.use("/api/tournaments", users);
 
 if (app.get("env") === "development") {
   app.use(morgan("tiny"));
