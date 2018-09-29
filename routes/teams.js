@@ -11,7 +11,8 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const team = new Team({
         name: req.body.name,
-        tournament: req.params.id
+        tournament: req.params.id,
+        teamGroup: req.params.gid
     });
     const result = await team.save();
     res.send(result);
