@@ -13,6 +13,7 @@ const teams = require("./routes/teams");
 const matchResults = require("./routes/match-results");
 const standings = require("./routes/standings");
 const teamGroups = require("./routes/team-groups");
+const matchWeeks = require("./routes/match-weeks")
 
 app.use(express.json());
 app.use(helmet());
@@ -24,6 +25,7 @@ app.use("/api/tournaments/:id/groups/:gid/teams", teams);
 app.use("/api/tournaments/:id/matches", matches);
 app.use("/api/tournaments/:id/standings", standings);
 app.use("/api/tournaments/:id/matches/:mid/result", matchResults);
+//app.use("/api/tournaments/:id/weeks", matchWeeks);
 
 if (app.get("env") === "development") {
   app.use(morgan("tiny"));

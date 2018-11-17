@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
     const match = new Match({
         homeTeam: req.body.homeTeam,
         awayTeam: req.body.awayTeam,
+        startDate: req.body.startDate,
         tournament: req.params.id
     });
     const result = await match.save();

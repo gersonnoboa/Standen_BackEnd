@@ -12,6 +12,10 @@ const matchSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "tournament"
     },
+    matchWeek: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "matchweek"
+    },
     startDate: {
         type: Date,
         default: new Date()
